@@ -42,7 +42,7 @@
     CGFloat yTransform = 0.0;
     CGRect smallRect = CGRectZero;
     for (UIImage *image in imageArray){
-        NSInteger x = ++index % maxRow;
+        NSInteger x = ++index % maxRow; //used to change the row when modulus is zero.
         if (x==0){
             smallRect = CGRectMake(xTransform, yTransform, maxSide, maxSide);
             ++currentRow;
@@ -63,8 +63,6 @@
             
         }
     }
-    //let cgIntermediate = CIContext(options: nil).createCGImage(composite!, fromRect: composite!.extent())
-   // let finalRenderedComposite = UIImage(CGImage: cgIntermediate)!
     CGRect resultRect = CGRectMake(0, 0, 241, 241);
     UIImage *image = [UIImage imageWithCGImage:[[CIContext contextWithOptions:nil]createCGImage:resultImage fromRect:resultRect]];
     return image;
