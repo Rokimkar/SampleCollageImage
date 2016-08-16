@@ -17,7 +17,56 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImage *image = [self makeCollageWithImages:[self getImageArray] forRect:self.imageViewForCollage.frame];
+    self.imageViewForCollage.image = image;
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+-(NSArray *)getImageArray{
+    UIImage *lion = [UIImage imageNamed:@"lion.jpg"];
+    UIImage *firstSwim = [UIImage imageNamed:@"First_Swim.png"];
+    UIImage *bulls = [UIImage imageNamed:@"bulls.png"];
+    UIImage *sharks = [UIImage imageNamed:@"sharks.png"];
+    NSArray *imageArray = [NSArray arrayWithObjects:lion,firstSwim,bulls,sharks,nil];
+    return imageArray;
+}
+
+-(UIImage *)makeCollageWithImages:(NSArray *)imageArray forRect:(CGRect )rect{
+    CIImage *resultImage;
+    NSInteger maxRow = 2;
+    CGFloat maxSide = 0.0;
+    maxSide = MAX(rect.size.width/maxRow, rect.size.height/maxRow);
+    NSInteger index = 0;
+    NSInteger currentRow = 0;
+    CGFloat xTransform = 0.0;
+    CGFloat yTransform = 0.0;
+    CGRect smallRect = CGRectZero;
+    for (UIImage *image in imageArray){
+        NSInteger x = index++ % maxRow;
+        if (x==0){
+            smallRect = CGRectMake(xTransform, yTransform, maxSide, maxSide);
+            ++currentRow;
+            xTransform = 0.0;
+            yTransform = (maxSide * (CGFloat)(currentRow - 1));
+        }else {
+            
+            //not a new row
+            smallRect = CGRectMake(xTransform, yTransform, maxSide, maxSide);
+            xTransform += (CGFloat)(maxSide);
+        }
+        CIImage *compositeImage = [[CIImage alloc]initWithImage:image];
+        compositeImage = [compositeImage imageByApplyingTransform:CGAffineTransformMakeScale(maxSide / image.size.width, maxSide / image.size.height)];
+        compositeImage = [compositeImage imageByApplyingTransform:CGAffineTransformMakeTranslation(smallRect.origin.x, smallRect.origin.y)];
+        if (resultImage){
+            resultImage = [compositeImage imageByCompositingOverImage:resultImage];
+        }else{
+            resultImage = compositeImage;
+        }
+    }
+    //let cgIntermediate = CIContext(options: nil).createCGImage(composite!, fromRect: composite!.extent())
+   // let finalRenderedComposite = UIImage(CGImage: cgIntermediate)!
+    UIImage *image = [UIImage imageWithCGImage:[[CIContext contextWithOptions:nil]createCGImage:resultImage fromRect:resultImage.extent]];
+    return image;
 }
 
 - (void)didReceiveMemoryWarning {

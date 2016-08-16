@@ -15,6 +15,10 @@
 		9EF7C0101D5DEF3A001B97AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EF7C00E1D5DEF3A001B97AC /* LaunchScreen.storyboard */; };
 		9EF7C01B1D5DEF3A001B97AC /* CollageImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF7C01A1D5DEF3A001B97AC /* CollageImageTests.m */; };
 		9EF7C0261D5DEF3A001B97AC /* CollageImageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF7C0251D5DEF3A001B97AC /* CollageImageUITests.m */; };
+		9EF7C0371D5DF487001B97AC /* lion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EF7C0331D5DF487001B97AC /* lion.jpg */; };
+		9EF7C0381D5DF487001B97AC /* First_Swim.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EF7C0341D5DF487001B97AC /* First_Swim.png */; };
+		9EF7C0391D5DF487001B97AC /* bulls.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EF7C0351D5DF487001B97AC /* bulls.png */; };
+		9EF7C03A1D5DF487001B97AC /* sharks.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EF7C0361D5DF487001B97AC /* sharks.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		9EF7C0211D5DEF3A001B97AC /* CollageImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollageImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF7C0251D5DEF3A001B97AC /* CollageImageUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollageImageUITests.m; sourceTree = "<group>"; };
 		9EF7C0271D5DEF3A001B97AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EF7C0331D5DF487001B97AC /* lion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lion.jpg; path = ../../../../../../../../Downloads/wallpapers/lion.jpg; sourceTree = "<group>"; };
+		9EF7C0341D5DF487001B97AC /* First_Swim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = First_Swim.png; path = ../../../../../../../../Downloads/wallpapers/First_Swim.png; sourceTree = "<group>"; };
+		9EF7C0351D5DF487001B97AC /* bulls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bulls.png; path = ../../../../../../../../Downloads/wallpapers/bulls.png; sourceTree = "<group>"; };
+		9EF7C0361D5DF487001B97AC /* sharks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sharks.png; path = ../../../../../../../../Downloads/wallpapers/sharks.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,7 @@
 				9EF7C00C1D5DEF3A001B97AC /* Assets.xcassets */,
 				9EF7C00E1D5DEF3A001B97AC /* LaunchScreen.storyboard */,
 				9EF7C0111D5DEF3A001B97AC /* Info.plist */,
+				9EF7C03B1D5DF4CB001B97AC /* Images */,
 				9EF7C0001D5DEF3A001B97AC /* Supporting Files */,
 			);
 			path = CollageImage;
@@ -138,6 +147,17 @@
 				9EF7C0271D5DEF3A001B97AC /* Info.plist */,
 			);
 			path = CollageImageUITests;
+			sourceTree = "<group>";
+		};
+		9EF7C03B1D5DF4CB001B97AC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9EF7C0331D5DF487001B97AC /* lion.jpg */,
+				9EF7C0341D5DF487001B97AC /* First_Swim.png */,
+				9EF7C0351D5DF487001B97AC /* bulls.png */,
+				9EF7C0361D5DF487001B97AC /* sharks.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,8 +263,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EF7C0391D5DF487001B97AC /* bulls.png in Resources */,
 				9EF7C0101D5DEF3A001B97AC /* LaunchScreen.storyboard in Resources */,
 				9EF7C00D1D5DEF3A001B97AC /* Assets.xcassets in Resources */,
+				9EF7C0381D5DF487001B97AC /* First_Swim.png in Resources */,
+				9EF7C03A1D5DF487001B97AC /* sharks.png in Resources */,
+				9EF7C0371D5DF487001B97AC /* lion.jpg in Resources */,
 				9EF7C00B1D5DEF3A001B97AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
