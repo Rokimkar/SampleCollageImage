@@ -32,7 +32,7 @@
 }
 
 -(UIImage *)makeCollageWithImages:(NSArray *)imageArray forRect:(CGRect )rect{
-    CIImage *resultImage = [[CIImage alloc]init];
+    CIImage *resultImage;
     NSInteger maxRow = 2;
     CGFloat maxSide = 0.0;
     maxSide = MAX(rect.size.width/maxRow, rect.size.height/maxRow);
@@ -60,7 +60,7 @@
         if (resultImage){
             resultImage = [compositeImage imageByCompositingOverImage:resultImage];
         }else{
-            
+            resultImage = compositeImage;
         }
     }
     CGRect resultRect = CGRectMake(0, 0, 241, 241);
